@@ -1,0 +1,158 @@
+Date: 10/06/2024
+
+
+L1X2#
+
+@@@ Poisson Distribution
+- events are independent 
+- rate of event occurrence is constant
+- probability of event is proportional to the time period
+- useful for finding out probability of car selling or customer having in restaurant
+
+@@@ Binomial and Bernoulli distribution
+- discrete probability distribution
+- success or failure
+- ber = 1 trial, bin = n trails
+
+
+@@@  EMR
+-a big data platform
+-access bd fast, easy & cost effective way
+
+@@@ EMRFS consistent view
+- EMRFS - object store of Hadoop on s3
+- feature by which you can assure data consistency with s3 by using help of dynamodb
+- dynamodb will check whole data is there in emrfs file same as s3
+- that checking done by dynamodb
+- emr notebooks are stored in s3, they are not tied directly to cluster.
+- notebook hosted inside VPC
+
+
+@@@ Standardization and Normalization
+- Standardization make values in between -1 to 1
+- Normalization make values in between 0 to 1
+- Standardization is selected over normalization when there are a lot of number outlier in data
+- Standardization is z-score normalization
+
+@@@ Imputation
+- DeepAR is algo which can be used to predict missing data
+- DeepAR is RNN 
+- its used for imputing missing data
+
+@@@ encoding
+- if ordinal categorical data than map each value to some numeric value which can preserve its inherent ordering
+- like ['small','medium','large'] => [0,1,2]
+
+@@@ Binning
+- convert categorical data to numeric - its numeric transformation
+- convert categorical data to categorical - its categorical transformation
+- when so much uncertainty in data then use binning 
+- it avoid overfitting & improve robustness of model
+
+@@@ Log Transformation
+- data are not distributed evenly on right and left side of bell curve. So median value is moved towards right or left side
+- this is skewed data
+- when variable is spanned over many order of magnitude like income
+- the income is most probably on min span, very less people has higher income - max span
+- of data number is so much large bring them back down to earth by using log transformation
+- log transformation reduce negative effect of outlier
+- there LT is useful
+
+
+@@@ TF-IDF
+
+- TF(word) = Term Frequency in given Document ===> (no of occurrence of word / total no of word ) in given document
+- IDF(word) = inverse ( Document Frequency ) ====> log (total no of document / no of document having given word)
+- shape of tf-idf matrix = (no of documents, no of unique words)
+- tf-idf is weighting factor for text search and text mining
+
+@@@ Orthogonal Sparse Bigram
+- alternative for bi-gram transformation
+- work well on document having large no of words n>10
+- "The quick brown fox jumps over the lazy dog"
+- example : OSB size = 4
+- 4 window size OSB for 1 combination => "The quick brown fox" => {"The_quick","The__brown","The___fox"}
+- "quick brown fox jumps" => {"quick_brown","quick__fox","quick___jumps"}
+- By using OSB we can captured distance between words
+
+@@@ Cartesian Product Transformation
+- when there is interaction product of feature impact more on outcome we can consider CPT to improve feature
+- like degree and job will effect on product will be purchased or not.
+- Example: title and binding
+- "Deep Learning: basics, applications", "Hardcover" => {"Deep_Hardcover", "Learning_Hardcover", "basics_Hardcover", "applications_Hardcover"}
+
+
+SA!1%
+
+@@@ Activation Function
+- sigmoid => output = 0,1 => used in output layer - gives answer for probability problem
+- Relu => output = 0, x => used in hidden layer, solve vanish gradient problem
+- tanh => output = -1, 1 => used in output layer - preferred over sigmoid, create vanish gradient problem
+
+
+@@@ Validation Dataset
+- used for assess the training quality while training in progress
+- cross validation is used when overfitting when model lose to generalize on data
+- MSE will be small after training but in testing its high - means lose of generalization
+
+@@@ HP & P
+HP = need to select before training starts
+P = they calculated during training like weight and bias
+
+@@@ GD algo
+- gradient means slop of line
+- to optimize best value of weight and bias
+- it try to minimize cost function - iteratively
+- calculate gradient of cost function and move down side to get minimum value of cost - when gradient not changing that much
+- weight's gradient will be subtracted from weight = learning rate <- which should be small
+- step-size = slop*learning-rate
+- step-size decide how much we will change weight and bias
+
+@@@ Variance and Bias
+- Variance is how different the model fit on training and testing data
+- if model is complex and it is overfitting it learn training data so well but not testing data
+- so here that fit difference is high - so high variance, so this model will have low bias as all data point in training fits well
+
+- Bias is when model can not figure out the relationship between features well
+- so it can not learn well better fit on training data set
+- it is so simple
+- but as it is not perfect fit on training datapoints it also not that perfect on testing data either
+- so it is more generalize
+- it has high bias and low variance as it is fit nearly same on train and test dataset
+
+@@@ L2 regularization- ridge regression
+- panelizing term will be added to reduce weight and bias value so model will not overfit and become more generalize
+- it work on increasing bias and improve variance(become more generalize)
+- model perform little poor on training but it perform consistently okay on both training and testing dataset
+
+- slop is reduced with L2 penalty
+- which is L2 regression = Min(sum of squared residual)+alpha+slope^2
+- least square regression = min(sum of squared residual)
+- if alpha increase slope of regression line reduced and R-line becomes more horizontal
+- so two independent variable which form regression line will not have that much effect on each other as line becoming horizontal
+- so if alpha increase model becomes less sensitive towards variations of the independent variables
+- example if experience increase salary will not increase that much here
+- dense output
+
+@@@ L1 Regression - Lasso regression
+- which is L2 regression = Min(sum of squared residual)+alpha+slope
+- slope value will be added directly not square one
+- its use for feature selection
+- here slope and in-term whole feature can goes to 0
+- sparse output
+
+- select between them based on features all are important and not
+
+
+@@@ CNN  - relu part
+- add non-linearity in feature map - as it result either 0(for negative val) or x(same as val)
+- other AF will give 0,1,-1 kind of output
+- it solve gradient vanishing problem
+
+@@@types to solve vanish gradient problem
+- use relu AF
+- use LSTM
+- use ResNet
+- use mutli-level hierarchy network- train one level at a time and backpropagate to get good value of gradient
+- gradient checking - debugging technique to check gradient value while training
+

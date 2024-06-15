@@ -1,0 +1,95 @@
+Date : 08/06/2024
+
+V135%
+
+@@@ difference between DL and ML
+
+their technique of extracting features 
+- DL will do it automatically you have to choose only architecture that you want and pass data FE will done automatically
+- ML choose model to train and extract feature manually
+
+@@@ Structured data
+- data which are structured and can be stored in DB
+
+@@@ unstructured data
+- images, newspaper data , email data - diff kind of data together
+
+@@@ database
+- MySQL, aurora many
+
+@@@ data warehouse
+- multiple structured database storage warehouse
+
+@@@ Amazon Fargate
+- you can run ECS  container without managing server with fargate
+- its a compute engine
+
+@@@ datalake
+- mixture repository for structured and unstructured data
+- file, text, mL output, real-time data, analytics output any kind of data
+
+@@@ Aurora - RDS
+- MySQL and PostgreSQL- many options given to choose to create database  - relation data storage - managed by AWS 
+- no need to worry about hardware provision, backup and setup
+
+@@@ RedShift
+- data warehouse
+- parallel, querying
+- column storage, data compression
+- use ML to optimize its performance
+- perform analytics
+
+@@@ DynamoDB
+- no sql, key-value db
+- minimum latency(delay of transfer)
+- very fast response
+- 3 AZ replication
+
+@@@ S3
+- you can create your own data-lake
+- object tags are important for user access, life cycle rule, performing analytics
+- EC2 instance can be launched to access data from S3
+
+@@@ SSE-S3 encryption
+- two level security 
+- 1.encrypt object by key
+- 2.encrypt key by master key
+
+@@@ Amazon Macie
+- security service
+- automatically find sensitive data and alert user about anomalies
+
+@@@ Amazon s3 access log <= monitoring system
+- log all access request made to bucket
+- ensure security and access audit
+
+@@@ Amazon Trusted advisor
+- recommendation to improve system performance
+- close security gap
+
+@@@ Security S3
+- add tagging with bucket policy like tag : Sensitive = TRUE
+
+@@@ Elastic Search
+- for clickstream analytics
+
+@@@ Amazon Elasticache
+- in-memory, data store and cache
+- gaming, IOT, healthcare app
+- retrive from high throughput, low latency in memory datastore
+
+
+
+@@@ KDS - Kinesis data stream
+- provide KDS enabled data encryption
+- scale data accordingly
+- so data analytics can be applied directly on those data
+- shard have partitions, data and code associated with each shard - shard = multiple partition
+- KDS has KPL & KCL - (producer and client) library
+- you can use to configure producer and client related application development task
+- direct kinesis sdk api provided by aws which is more faster than library - low latency
+
+@@@ KFS
+- consume data from any device
+- do processing by lambda func
+- deliver it to any datasource
